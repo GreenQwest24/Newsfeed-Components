@@ -121,4 +121,21 @@ class article {
     this.dispose.textContent = 'Remove article from feed';
     this.dispose.addEventListener('click', () => this.eliminate());
   }
+
+
+expandArticle() {
+  this.domElement.classList.toggle('article-open');
+  if (this.domElement.classList.contains('article-open')) {
+    TweenMax.fromTo((this.domElement), .7, {css:{height: "50px"}}, {css:{height: "400px"}});
+    this.expandButton.textContent = 'Click to Close';
+  } else{
+    TweenMax.fromTo((this.domElement), .7, {css:{height: "400px"}}, {css:{height: "50px"}});
+    this.expandButton.textContent = 'Click to Expand';
+
+  } 
+} 
+
+eliminate() {
+  TweenMax.to((this.domElement), .7, { css:{x: 400, opacity: "0", dsiplay: "none"}})
+}
 }
