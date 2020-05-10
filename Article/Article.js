@@ -111,3 +111,14 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+class article {
+  constructor(domElement) {
+    this.domElement = domElement;
+    this.expandButton = this.domElement.querySelector('.article.expandButton');
+    this.expandButton.textContent = 'Click to Expand';
+    this.expandButton.addEventListener('click', () => this.expandArticle());
+    this.dispose = this.domElement.querySelector('.article .dispose');
+    this.dispose.textContent = 'Remove article from feed';
+    this.dispose.addEventListener('click', () => this.eliminate());
+  }
+}
