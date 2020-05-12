@@ -139,3 +139,6 @@ eliminate() {
   TweenMax.to((this.domElement), .7, { css:{x: 400, opacity: "0", dsiplay: "none"}})
 }
 }
+
+const articles = document.querySelectorAll('.articles .areticle')
+articles.forEach(x => new Article(x));

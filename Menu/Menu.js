@@ -31,3 +31,22 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
+const toggleMenu = () => {
+  menu.classList.toggle('menu-open');
+  if (menu.classList.contains('menu-open')) {
+    TweenMax.fromTo((menu), .7, {css:{opacity: "0", display: "none", x: -350}}, {css:{opacity: "1", display: "block", x: 0}});
+  } else {
+    TweenMax.fromTo((menu), .7, {css:{opacity: "1", display: "block", x: 0}}, {css:{opacity: "0", display:"none", x: -350}});
+  
+  }
+}
+
+const menu = document.querySelector('.menu');
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', e => {
+  console.log(e. target)
+  if (e.target !== document.querySelector('.menu-button') && menu.classList.contains('menu-open')) {
+    menu.classList.remove('menu--open');
+    TweenMax.fromTo((menu), .7, {css:{opacity:"1", display: "block", x:0}}, {css:{opacity: "0", display: "none", x: -350}});
+  }
+})
